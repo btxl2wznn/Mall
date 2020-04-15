@@ -1,4 +1,4 @@
-# mall
+＃ 仿蘑菇街vue项目 mall
 
 ## Project setup
 ```
