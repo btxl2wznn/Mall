@@ -1,5 +1,5 @@
-＃  mall
-仿蘑菇街vue项目
+## mall
+### 仿蘑菇街vue项目
 ## Project setup
 ```
 npm install
