@@ -4,7 +4,8 @@
         <div slot="center">购物车({{cartLength}})</div>
     </nav-bar>
     <cart-list :cart-list="cartList"></cart-list>
-    <cart-bottom-bar></cart-bottom-bar>
+    <cart-bottom-bar @buy="buy"></cart-bottom-bar>
+    <toast ref="toast"></toast>
 	</div>
 </template>
 
@@ -13,6 +14,7 @@
   import CartBottomBar from './childComps/CartBottomBar.vue'
 
   import navBar from 'components/common/navbar/navBar.vue'
+  import Toast from 'components/common/toast/Toast.vue'
 
   import { mapGetters } from 'vuex'
 
@@ -21,13 +23,24 @@
     components: {
       navBar,
       CartList,
-      CartBottomBar
+      CartBottomBar,
+      Toast
     },
     computed: {
       ...mapGetters([
         'cartLength',
         'cartList'
       ])
+    },
+    methods: {
+      buy() {
+        if(this.cartLength == 0){
+          this.$toast({message: '请添加商品'})
+        }else{
+          this.$toast({message: '不好意思^-^该功能尚未实现'})
+        }
+        
+      }
     }
   }
 </script>

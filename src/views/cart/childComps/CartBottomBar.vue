@@ -6,7 +6,7 @@
     </div>
     <span>全选</span>
     <span class="total-price">合计: ￥{{totalPrice}}</span>
-    <span class="buy">结算({{cartLength}})</span>
+    <span class="buy" @click="buy">结算({{cartLength}})</span>
   </div>
 </template>
 
@@ -59,6 +59,9 @@
             item.checked = false;
           });
         }
+      },
+      buy() {
+        this.$emit('buy')
       }
     }
   }

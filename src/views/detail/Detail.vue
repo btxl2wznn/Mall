@@ -14,7 +14,7 @@
       <detail-rate ref="rate" :rate="rate" @imageLoad = "imgLoad"></detail-rate>
       <goods-list ref="recommend" class="recommend" :goods="recommend"></goods-list>
     </detail-scroll>
-    <detail-bottom-bar @addToCart="addToCart"></detail-bottom-bar>
+    <detail-bottom-bar @addToCart="addToCart" @pay="pay"></detail-bottom-bar>
     <toast ref="toast"/>
   </div>
 </template>
@@ -148,6 +148,9 @@
           //   console.log(res)
           // })
         }
+      },
+      pay() {
+        this.$toast({message: '不好意思^-^该功能尚未实现'})
       }
     }
   }
